@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/style.css">
+    <title>To-Do List</title>
+</head>
+<body>
+    <div class="header">
+        <div id="header__title">
+            2Do List
+            <img src="../dist/playlist-check.svg" alt="bulleted list" class="src" id="logo"></div>
+    </div>
+    <div class="projectsandTasksContainer">
+        <div class="createNewThings">
+            <button class="addNewProject1" data-id="addNewProject">Add a new project</button>
+            <button class="addNewTask" data-id="addNewTask">Add a new task</button>
+        </div>
+        <div class="displayprojects">
+            <div class="displayprojects__projectContainernoDate" data-id="noDate">
+                <div class="displayprojects__projectDates">
+                    <h1 class="projectDates_noDate projectDates">
+                        No date
+                    </h1>
+                </div>
+            </div>
+            <div class="displayprojects__projectContainerToday" data-id="todaysDate">
+                <div class="displayprojects__projectDates">
+                    <h1 class="projectDates_today projectDates">
+                        Due today
+                    </h1>
+                </div>
+            </div>
+            <div class="displayprojects__projectContainerthisWeek"
+            data-id="thisWeeksDate">
+                <div class="displayprojects__projectDates">
+                    <h1 class="projectDates_thisWeek projectDates">
+                        Due this week 
+                    </h1>
+            </div>
+        </div>
+            <div class="displayprojects__projectContainerupcoming"
+            data-id="upcomingDate">
+                <div class="displayprojects__projectDates">
+                    <h1 class="projectDates_upcoming projectDates">
+                        Upcoming projects
+                    </h1>
+            </div>
+        </div>
+    </div>
+    <div id="overlay" data-id="projectOverlay">
+        <div class="addNewProject">
+            <div class="modalContainer">
+                <div class="modalContainer__top">
+                    <div id="top__title">
+                        New Project
+                    </div>
+                    <div id="closeButton" data-id="projectCloseButton"><img src="../dist/close.svg" alt="close button" class="src"></div>
+                </div>
+                <div class="modalContainer__bottom">
+                    <div id="bottom_textentry">
+                        <input type="text" name="projectTitle" id="pTitle" placeholder="Project title...">
+                    </div>
+                    <div class="bottom_projectDuedate">
+                        <label for="projectDueDate">Project due:</label>
+                        <input type="date" name="projectDueDate" id="projectDueDate">
+                    </div>
+                    <div class="bottom__actionButtons">
+                        <button class="close">Close</button>
+                        <button class="addProject" data-id="addProject">Add Project</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="overlayCreateTask" data-id="taskOverlay">
+        <div class="addNewTask__modal">
+            <div class="addNewTask__modalContainer">
+                <div class="task__modalContainer-top">
+                    <div class="task__top-title">
+                        New Task
+                    </div>
+                    <div id="closeButton" data-id="taskCloseButton"><img src="../dist/close.svg" alt="close button" class="src"></div>
+                </div>
+                <div class="task__modalContainer-bottom">
+                    <form action="" class="requiredFields">
+                        <div class="requiredFields__projectSelection">
+                            <label for="whichProject">
+                                Project:
+                            </label>
+                            <select name="whichProject" id="whichProject"
+                            data-id="whichProject">
+                            </select>
+                        </div>
+                        <div class="requiredFields__title">
+                            <label for="taskTitle">
+                                Task name:
+                            </label>
+                            <input type="text" name="taskTitle" id="taskTitle" placeholder="Title">
+                        </div>
+                        <div class="requiredFields__date">
+                            <label for="taskDueDate">
+                                Task due:
+                            </label>
+                            <input type="date" name="taskDueDate" id="taskDueDate">
+                        </div>
+                        <div class="requiredFields__priority">
+                            <label for="taskPriority">
+                                Task priority:
+                            </label>
+                            <select name="taskPriority" id="taskPriority">
+                                <option value="priorityLow" >Low</option>
+                                <option value="priorityMedium" >Medium</option>
+                                <option value="priorityHigh" >High</option>
+                            </select>
+                        </div>
+                        <div class="requiredFields__desc">
+                            <label for="taskDesc">
+                                Description:
+                            </label>
+                            <textarea name="taskDesc" id="taskDesc" placeholder="Max 200 characters" maxlength="200"></textarea>
+                        </div>
+                    </form>
+                    <div class="bottom__actionButtons2">
+                        <button class="closeTask" data-id="close">Close</button>
+                        <button class="addtheTask" data-id="addTask">Add Task</button>
+                        <button class="edittheTask" data-id="editTask">Edit Task</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
